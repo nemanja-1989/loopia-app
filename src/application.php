@@ -19,5 +19,5 @@ $loader->load('http_services.yaml');
 $loader->load('film_api_services.yaml');
 $loader->load('routes.yaml');
 
-$containerBuilder->compile(true);
-return $containerBuilder;
+$a = $containerBuilder->compile(true);
+return $a;
