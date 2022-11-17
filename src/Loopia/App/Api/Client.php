@@ -32,8 +32,8 @@ class Client implements CredentialsConsumerInterface {
 	public function getConsumerClosure(): Closure {
 		return function() {
 			/* @var $this Credentials */
-			if (false !== $hash = password_hash($this->password, PASSWORD_DEFAULT)) {
-				return $this->username . ':' . base64_encode($hash);
+			if (false !== $hash = password_hash($this->getPassword(), PASSWORD_DEFAULT)) {
+				return $this->getUsername() . ':' . base64_encode($hash);
 			}
 
 			throw new Exception('Failed creating authentication hash');

@@ -13,11 +13,10 @@ $loader = new YamlFileLoader($containerBuilder, new FileLocator([
 	$rootDir.'/config/',
 	$rootDir.'/config/defaults/',
 	$rootDir.'/config/'.$env.'/',
-]));
-$loader->load('services.yaml');
-$loader->load('http_services.yaml');
-$loader->load('film_api_services.yaml');
+]), $env);
+//$loader->load('services.yaml');
+//$loader->load('http_services.yaml');
+//$loader->load('film_api_services.yaml');
 $loader->load('routes.yaml');
 
-$a = $containerBuilder->compile(true);
-return $a;
+return $containerBuilder->compile(true);
